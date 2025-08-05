@@ -17,7 +17,7 @@ terraform {
   backend "azurerm" {
     resource_group_name  = "AnujPipe-rg"        # Replace with your RG name
     storage_account_name = "pipelinestorage2025"       # Must be globally unique
-    container_name       = "tfstate"                # Container to store state files
-    key                  = "terraform.tfstate"       # Name of the state file
+    container_name       = "pipelinecont"                # Container to store state files
+    key                  = "thakur.tfstate"       # Name of the state file
   }
 }
