@@ -1,23 +1,15 @@
 resource "azurerm_resource_group" "example" {
-  name     = "AnujPipe-rg"
+  name     = "anujPipe-rg"
   location = "East US"
 }
 
 
 resource "azurerm_storage_account" "example" {
-  name                     = "pipelinestorage2025"
-  resource_group_name      = "AnujPipe-rg"
+  name                     = "anujpipelinestorage2025"
+  resource_group_name      = "anujPipe12-rg"
   location                 = "East US"
   account_tier             = "Standard"
   account_replication_type = "GRS"
   
   }
 
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "AnujPipe-rg"        # Replace with your RG name
-    storage_account_name = "pipelinestorage2025"       # Must be globally unique
-    container_name       = "pipelinecont"                # Container to store state files
-    key                  = "thakur.tfstate"       # Name of the state file
-  }
-}

@@ -11,3 +11,12 @@ provider "azurerm" {
   features {}
   subscription_id = "4a8937a7-b294-4a1f-8d31-79bbb1a4c17f"
 }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "anujPipe-rg"        # Replace with your RG name
+    storage_account_name = "pipelinestorage2025"       # Must be globally unique
+    container_name       = "pipelinecont"                # Container to store state files
+    key                  = "thakur.tfstate"       # Name of the state file
+  }
+}
